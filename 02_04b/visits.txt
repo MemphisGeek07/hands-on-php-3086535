@@ -1,1 +1,22 @@
-0
+<?php
+    function get_visitors() {
+      return file_get_contents('visits.txt');
+    }
+
+    function log_visit() {
+        $visits = (int)file_get_contents('visits.txt');
+        $visits++;
+        file_put_contents('visits.txt' , $visits);
+    }
+    log_visit();
+    <!DOCTYPE Html>
+    <Html>
+          <head>
+          <title>My page</html>
+          <meta name="author" value="Bongane Ntombela" />
+          </head>
+          <body>
+              <h1>Welcome to my website</h1>
+              <p>There has been<b><?php echo get_visitors(); ?></b>visitors so far.</p>
+          </body>
+          </html>
